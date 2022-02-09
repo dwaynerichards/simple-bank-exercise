@@ -1,8 +1,3 @@
-/*
- * This exercise has been updated to use Solidity version 0.8.5
- * See the latest Solidity updates at
- * https://solidity.readthedocs.io/en/latest/080-breaking-changes.html
- */
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.16 <0.9.0;
 
@@ -13,7 +8,7 @@ contract SimpleBank {
     address public owner = msg.sender;
 
     event LogEnrolled(address accountAddress);
-    event LogDepositMade(address accountAddress, uint256 depositAmount);
+    event LogDepositMade(address accountAddress, uint256 amount);
     event LogWithdrawal(
         address accountAddress,
         uint256 withdrawAmount,
@@ -30,13 +25,6 @@ contract SimpleBank {
         balance = balances[msg.sender];
     }
 
-    /**
-       event LogEnrolled(address accountAddress);
-    event LogDepositMade(address accountAddress, uint256 depositAmount);
-    event LogWithdrawal(
-        address accountAddress,
-        uint256 withdrawAmount,
-        uint256 newBalance */
     function enroll() external returns (bool success) {
         require(enrolled[msg.sender] == false, "Already enrolled");
         // 1. enroll of the sender of this transaction
@@ -52,13 +40,6 @@ contract SimpleBank {
         balances[msg.sender] += msg.value;
         balance = balances[msg.sender];
         emit LogDepositMade(msg.sender, msg.value, balance);
-
-        // 1. Add the appropriate keyword so that this function can receive ether
-        // 2. Users should be enrolled before they can make deposits
-        // 3. Add the amount to the user's balance. Hint: the amount can be
-        //    accessed from of the global variable `msg`
-        // 4. Emit the appropriate event associated with this function
-        // 5. return the balance of sndr of this transaction
     }
 
     /// @notice Withdraw ether from bank
