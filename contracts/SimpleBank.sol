@@ -59,9 +59,16 @@ contract SimpleBank {
         returns (uint256 balance)
     {
         balances[msg.sender] -= withdrawAmount;
-        (bool sent, ) = payable(msg.sender).call{value: withdrawAmount}("");
+        uint256 sent = sendFunds(msg.sender, withdrawAmount);
         balance = this.getBalance();
         emit LogWithdrawl(msg.sender, withdrawAmount, balance);
         require(sent, "Withdraw not executed");
+    }
+
+    function sendFunds(address recipient, uint256 funds)
+        private
+        returns (bool sent)
+    {
+        (sent, ) = payable(recipient).call{value: funds}("");
     }
 }
