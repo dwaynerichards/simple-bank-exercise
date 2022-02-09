@@ -1,0 +1,26 @@
+{
+  "name": "simple-bank-exercise",
+  "version": "1.0.0",
+  "description": "SimpleBank is a [Truffle](https://www.trufflesuite.com/) project that contains a starter contract, [migration](https://www.trufflesuite.com/docs/truffle/getting-started/running-migrations#migration-files) and [Truffle JavaScript test files](https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript). In this exercise you are going to implement the SimpleBank.sol contract.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwaynerichards/simple-bank-exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwaynerichards/simple-bank-exercise/issues"
+  },
+  "homepage": "https://github.com/dwaynerichards/simple-bank-exercise#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.19"
+  }
+}
