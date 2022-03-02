@@ -4,6 +4,7 @@ pragma solidity >=0.5.16 <0.9.0;
 contract SimpleBank {
     mapping(address => uint256) private balances;
     mapping(address => bool) public enrolled;
+    uint dwayne = 1;
 
     address public owner = msg.sender;
 
